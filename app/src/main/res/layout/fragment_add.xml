@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundgradient"
+    tools:context=".fragments.Add">
+
+
+
+    <RelativeLayout
+        android:id="@+id/add_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <com.example.binaryus.modifiedviews.AutoResizeTextView
+            android:id="@+id/autotext"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:maxLines="2"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:paddingBottom="10dp"
+            android:text="Uploading..."
+            android:textColor="@color/secondary1"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+        <ProgressBar
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/autotext"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/add_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="2dp"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/man" />
+
+    <EditText
+        android:id="@+id/add_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/add_image_view"
+        android:hint="Add a caption"
+        android:minLines="2"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/add_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/add_layout"
+        android:layout_below="@+id/add_image_view"
+        android:background="@drawable/backgroundgradientblur2">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/add_recylerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/add_image_view" />
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/add_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/add_nextbutton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:text="NEXT"
+            android:textAlignment="center"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/add_linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/add_backbutton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:text="BACK"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/add_postbutton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:text="POST"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>

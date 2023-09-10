@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    android:background="@drawable/backgroundgradientblur2">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profilepicpost"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/man" />
+
+    <LinearLayout
+        android:id="@+id/post_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/profilepicpost"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/namepost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:textColor="@color/headingtext"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/timepost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="12:50pm"
+            android:textColor="@color/secondary4"
+            android:textStyle="italic" />
+    </LinearLayout>
+
+    <!--    <View-->
+    <!--        android:id="@+id/view1_post"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0.1dp"-->
+    <!--        android:layout_below="@id/profilepicpost"-->
+    <!--        android:layout_marginBottom="1dp"-->
+    <!--        android:background="@color/secondary3" />-->
+
+    <ImageView
+        android:id="@+id/post_pic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profilepicpost"
+        android:scaleType="fitCenter" />
+
+    <!--    <View-->
+    <!--        android:id="@+id/view2_post"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0.1dp"-->
+    <!--        android:layout_below="@id/post_pic"-->
+    <!--        android:layout_marginBottom="1dp"-->
+    <!--        android:background="@color/secondary3" />-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/postaction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/post_pic"
+        >
+
+        <ImageButton
+            android:id="@+id/likebutton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/like"
+            android:backgroundTint="@color/secondary3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/likecount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="100k"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/likebutton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="2dp"
+            android:text="Likes"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/likecount"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/commentbutton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="8dp"
+            android:background="@drawable/comment"
+            android:backgroundTint="@color/secondary3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/sharebutton"
+            app:layout_constraintStart_toEndOf="@+id/likebutton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Comment"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/commentbutton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/sharebutton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="60dp"
+            android:background="@drawable/share"
+            android:backgroundTint="@color/secondary3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Share"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/sharebutton"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>
